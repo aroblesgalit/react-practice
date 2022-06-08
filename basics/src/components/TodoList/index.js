@@ -1,7 +1,10 @@
-import React from 'react'
+import React from 'react';
+import Todo from '../Todo'
 
-export default function index() {
+export default function index({ todos }) {
   return (
-    <div>Todo List</div>
+    todos.map(todo => {
+        return <Todo todo={todo} />
+    })
   )
 }
