@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Form() {
+export default function Form({ setInputText }) {
 
   function inputTextHandler(e) {
-    console.log(e.target.value)
+    setInputText(e.target.value)
   }
 
   return (
