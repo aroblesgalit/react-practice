@@ -3,11 +3,12 @@ import React from 'react';
 export default function Form({ inputText, setInputText, todos, setTodos }) {
 
   function inputTextHandler(e) {
-    setInputText(e.target.value)
+    setInputText(e.target.value);
   }
 
   function submitTodoHandler(e) {
     e.preventDefault();
+    if (!inputText) return;
     setTodos([
       ...todos,
       {
