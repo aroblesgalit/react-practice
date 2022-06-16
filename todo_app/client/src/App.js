@@ -8,11 +8,11 @@ function App() {
   const [inputText, setInputText] = useState('');
   const [todos, setTodos] = useState([]);
   const [filterState, setFilterState] = useState('all');
-  const [filteredTodos, setFilteredTodos] = useState([...todos]);
+  const [filteredTodos, setFilteredTodos] = useState([]);
 
   useEffect(() => {
     filterHandler();
-  }, [todos]);
+  }, [todos, filterState]);
 
   function filterHandler() {
     switch(filterState) {
