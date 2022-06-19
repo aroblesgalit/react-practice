@@ -21,7 +21,13 @@ export default function MovieList() {
     ]);
 
     return (
-        <div>index</div>
+        <>
+            {
+                movies.map(movie => (
+                    <li>{movie.name}</li>
+                ))
+            }
+        </>
     );
 
 }
