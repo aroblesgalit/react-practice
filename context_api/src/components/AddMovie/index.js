@@ -3,7 +3,7 @@ import MovieContext from '../../utils/MovieContext';
 
 export default function AddMovie() {
 
-    const {movies, setMovies} = useContext(MovieContext);
+    const {setMovies} = useContext(MovieContext);
 
     const [name, setName] = useState('');
     const [price, setPrice] = useState(0);
