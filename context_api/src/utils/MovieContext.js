@@ -25,7 +25,10 @@ function MovieProvider(props) {
 
     return (
         <MovieContext.Provider
-            value={{movies}}
+            value={{
+                movies, 
+                setMovies
+            }}
         >
             {props.children}
         </MovieContext.Provider>
