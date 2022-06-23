@@ -1,5 +1,21 @@
 export const bankingReducer = (state, action) => {
-    return state; // return the old state
+    switch (action.type) {
+        case 'DEPOSIT':
+            // logic for DEPOSIT
+            break;
+        case 'WITHDRAW':
+            // logic for WITHDRAW
+            break;
+        case 'COLLECT_INTEREST':
+            // logic for COLLECT_INTEREST
+            break;
+        case 'DELETE_ACCOUNT':
+            // logic for DELETE_ACCOUNT
+            break;
+        default:
+            return state; // return the old state
+    }
+    
 }
 
 
