@@ -2,6 +2,8 @@ import React from 'react';
 
 export default function Auth() {
   return (
-    <div>Auth</div>
+    <div>
+        <button className='btn btn-info'>Log in</button>
+    </div>
   );
 }
