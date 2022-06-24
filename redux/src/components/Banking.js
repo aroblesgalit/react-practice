@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 export default function Banking() {
 
   const [amount, setAmount] = useState('');
 
-  function handleDeposit() {
+  const dispatch = useDispatch();
 
+  function handleDeposit() {
+    dispatch({
+      type: 'DEPOSIT',
+      payload: parseInt(amount)
+    })
   }
 
   function handleWithdraw() {
