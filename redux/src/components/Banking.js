@@ -11,19 +11,22 @@ export default function Banking() {
     dispatch({
       type: 'DEPOSIT',
       payload: parseInt(amount)
-    })
+    });
   }
 
   function handleWithdraw() {
-    
+    dispatch({
+      type: 'WITHDRAW',
+      payload: parseInt(amount)
+    });
   }
 
   function handleCollectInterest() {
-    
+    dispatch({ type: 'COLLECT_INTEREST' });
   }
 
   function handleDelete() {
-    
+    dispatch({ type: 'DELETE_ACCOUNT' });
   }
 
   function handleAccountChange() {
