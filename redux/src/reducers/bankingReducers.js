@@ -3,17 +3,13 @@ const initialState = 0;
 export const bankingReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'DEPOSIT':
-            // logic for DEPOSIT
-            break;
+            return state + action.payload;
         case 'WITHDRAW':
-            // logic for WITHDRAW
-            break;
+            return state - action.payload;
         case 'COLLECT_INTEREST':
-            // logic for COLLECT_INTEREST
-            break;
+            return state * 1.03;
         case 'DELETE_ACCOUNT':
-            // logic for DELETE_ACCOUNT
-            break;
+            return 0;
         default:
             return state; // return the old state
     }
