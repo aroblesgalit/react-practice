@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 export default function Balance() {
 
-  const { balance } = useSelector(state => state);
+  const { balance } = useSelector(state => state.banking);
 
   return (
     <div>
