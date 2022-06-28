@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { toggleAuth } from '../actions/bankingActions';
 
 export default function Auth() {
 
@@ -8,7 +9,7 @@ export default function Auth() {
   const dispatch = useDispatch();
 
   function handleAuth() {
-    
+    dispatch(toggleAuth());
   }
 
   return (
