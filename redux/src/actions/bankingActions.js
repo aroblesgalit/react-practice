@@ -19,3 +19,7 @@ export const collectInterest = () => {
 export const deleteAccount = () => {
     return { type: 'DELETE_ACCOUNT' }
 }
+
+export const toggleAccount = () => {
+    return { type: 'TOGGLE_ACCOUNT' }
+}
