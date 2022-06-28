@@ -3,11 +3,11 @@ import { useSelector } from 'react-redux';
 
 export default function Balance() {
 
-  const store = useSelector(state => state);
+  const { balance } = useSelector(state => state);
 
   return (
     <div>
-        <h1>${store}</h1>
+        <h1>${balance}</h1>
     </div>
   );
 }
