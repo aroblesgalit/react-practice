@@ -21,6 +21,10 @@ export const bankingReducer = (state = initialState, action) => {
             return {
               balance: 0
             }
+        case 'TOGGLE_ACCOUNT':
+            return {
+              isSavingsAccount: !state.isSavingsAccount
+            }
         default:
             return state; // return the old state
     }

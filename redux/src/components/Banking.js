@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { deposit, withdraw, collectInterest, deleteAccount } from '../actions/bankingActions';
+import { deposit, withdraw, collectInterest, deleteAccount, toggleAccount } from '../actions/bankingActions';
 
 export default function Banking() {
 
@@ -25,7 +25,7 @@ export default function Banking() {
   }
 
   function handleAccountChange() {
-    
+    dispatch(toggleAccount());
   }
 
   return (
