@@ -5,16 +5,27 @@ import { applyMiddleware, createStore } from 'redux';
 import { counterReducer } from './reducer';
 import { Provider } from 'react-redux';
 
-const myLogger = (store) => {
-    return next => {
-        return action => {
-            console.log('middleware ran');
-            return next(action);
-        }
-    }
+
+const myLogger = store => next => action => {
+    console.log('middleware ran');
+    return next(action);
 }
 
-const store = createStore(counterReducer, applyMiddleware(myLogger));
+// const myLogger = (store) => {
+//     return next => {
+//         return action => {
+//             console.log('middleware ran');
+//             return next(action);
+//         }
+//     }
+// }
+
+const secondMiddlware = store => next => action => {
+    console.log('secondMiddleware ran');
+    return next(action);
+}
+
+const store = createStore(counterReducer, applyMiddleware(myLogger, secondMiddlware));
 
 ReactDOM.render(
     <Provider store={store}>
