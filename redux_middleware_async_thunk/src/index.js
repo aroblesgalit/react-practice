@@ -1,11 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import { counterReducer } from './reducer';
 import { Provider } from 'react-redux';
 
-const store = createStore(counterReducer);
+const myLogger = (store) => {
+    return next => {
+        return action => {
+            console.log('middleware ran');
+            return next(action);
+        }
+    }
+}
+
+const store = createStore(counterReducer, applyMiddleware(myLogger));
 
 ReactDOM.render(
     <Provider store={store}>
