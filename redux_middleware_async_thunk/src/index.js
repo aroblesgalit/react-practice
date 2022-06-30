@@ -7,7 +7,6 @@ import { Provider } from 'react-redux';
 
 
 const myLogger = store => next => action => {
-    console.log('middleware ran');
     return next(action);
 }
 
@@ -21,11 +20,19 @@ const myLogger = store => next => action => {
 // }
 
 const secondMiddlware = store => next => action => {
-    console.log('secondMiddleware ran');
     return next(action);
 }
 
-const store = createStore(counterReducer, applyMiddleware(myLogger, secondMiddlware));
+const capAtTen = store => next => action => {
+    if(store.getState() >= 10) {
+        return next({
+            type: 'DECREMENT'
+        });
+    }
+    next(action);
+}
+
+const store = createStore(counterReducer, applyMiddleware(myLogger, secondMiddlware, capAtTen));
 
 ReactDOM.render(
     <Provider store={store}>
